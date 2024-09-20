@@ -4,9 +4,9 @@ from os import path as osp
 from torch.utils import data as data
 from torchvision.transforms.functional import normalize
 
-from r_basicsr.data.transforms import augment
-from r_basicsr.utils import FileClient, get_root_logger, imfrombytes, img2tensor
-from r_basicsr.utils.registry import DATASET_REGISTRY
+from reactor.r_basicsr.data.transforms import augment
+from reactor.r_basicsr.utils import FileClient, get_root_logger, imfrombytes, img2tensor
+from reactor.r_basicsr.utils.registry import DATASET_REGISTRY
 
 
 @DATASET_REGISTRY.register()

@@ -1,7 +1,7 @@
 import torch
 from torch.nn import functional as F
 
-from r_basicsr.utils.registry import MODEL_REGISTRY
+from reactor.r_basicsr.utils.registry import MODEL_REGISTRY
 from .sr_model import SRModel
 
 

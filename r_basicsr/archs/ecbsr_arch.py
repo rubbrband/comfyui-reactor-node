@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from r_basicsr.utils.registry import ARCH_REGISTRY
+from reactor.r_basicsr.utils.registry import ARCH_REGISTRY
 
 
 class SeqConv3x3(nn.Module):

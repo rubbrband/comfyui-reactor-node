@@ -9,7 +9,6 @@ from operator import itemgetter as _itemgetter
 
 from segment_anything import SamPredictor
 
-from comfy import model_management
 
 
 ################################################################################

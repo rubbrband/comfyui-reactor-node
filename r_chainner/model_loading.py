@@ -1,5 +1,5 @@
-from r_chainner.archs.face.gfpganv1_clean_arch import GFPGANv1Clean
-from r_chainner.types import PyTorchModel
+from reactor.r_chainner.archs.face.gfpganv1_clean_arch import GFPGANv1Clean
+from reactor.r_chainner.types import PyTorchModel
 
 
 class UnsupportedModel(Exception):

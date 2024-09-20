@@ -1,5 +1,5 @@
-from r_basicsr.utils import get_root_logger
-from r_basicsr.utils.registry import MODEL_REGISTRY
+from reactor.r_basicsr.utils import get_root_logger
+from reactor.r_basicsr.utils.registry import MODEL_REGISTRY
 from .video_base_model import VideoBaseModel
 
 

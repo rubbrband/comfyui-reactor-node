@@ -1,6 +1,6 @@
 from typing import Union
 
-from r_chainner.archs.face.gfpganv1_clean_arch import GFPGANv1Clean
+from reactor.r_chainner.archs.face.gfpganv1_clean_arch import GFPGANv1Clean
 
 
 PyTorchFaceModels = (GFPGANv1Clean,)

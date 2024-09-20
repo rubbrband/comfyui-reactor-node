@@ -13,16 +13,14 @@ try:
 except:
     cuda = None
 
-import folder_paths
-import comfy.model_management as model_management
-from modules.shared import state
+from reactor.modules.shared import state
 
-from scripts.reactor_logger import logger
-from reactor_utils import (
+from reactor.scripts.reactor_logger import logger
+from reactor.reactor_utils import (
     move_path,
     get_image_md5hash,
 )
-from scripts.r_faceboost import swapper, restorer
+from reactor.scripts.r_faceboost import swapper, restorer
 
 import warnings
 
@@ -41,7 +39,7 @@ models_path_old = os.path.join(os.path.dirname(os.path.dirname(__file__)), "mode
 insightface_path_old = os.path.join(models_path_old, "insightface")
 insightface_models_path_old = os.path.join(insightface_path_old, "models")
 
-models_path = folder_paths.models_dir
+models_path = os.environ.get("REACTOR_MODELS_DIR")
 insightface_path = os.path.join(models_path, "insightface")
 insightface_models_path = os.path.join(insightface_path, "models")
 
@@ -431,9 +429,6 @@ def swap_face_many(
 
             target_faces = []
             for i, target_img in enumerate(target_imgs):
-                if state.interrupted or model_management.processing_interrupted():
-                    logger.status("Interrupted by User")
-                    break
                 
                 target_image_md5hash = get_image_md5hash(target_img)
                 if len(TARGET_IMAGE_LIST_HASH) == 0:

@@ -2,16 +2,16 @@ import os, glob
 
 from PIL import Image
 
-import modules.scripts as scripts
+import reactor.modules.scripts as scripts
 # from modules.upscaler import Upscaler, UpscalerData
-from modules import scripts, scripts_postprocessing
-from modules.processing import (
+from reactor.modules import scripts, scripts_postprocessing
+from reactor.modules.processing import (
     StableDiffusionProcessing,
     StableDiffusionProcessingImg2Img,
 )
-from modules.shared import state
-from scripts.reactor_logger import logger
-from scripts.reactor_swapper import (
+from reactor.modules.shared import state
+from reactor.scripts.reactor_logger import logger
+from reactor.scripts.reactor_swapper import (
     swap_face,
     swap_face_many,
     get_current_faces_model,
@@ -19,12 +19,10 @@ from scripts.reactor_swapper import (
     half_det_size,
     providers
 )
-import folder_paths
-import comfy.model_management as model_management
 
 
 def get_models():
-    models_path = os.path.join(folder_paths.models_dir,"insightface/*")
+    models_path = os.path.join(os.environ.get("REACTOR_MODELS_DIR"), "insightface/*")
     models = glob.glob(models_path)
     models = [x for x in models if x.endswith(".onnx") or x.endswith(".pth")]
     return models

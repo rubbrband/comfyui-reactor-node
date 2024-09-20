@@ -2,8 +2,8 @@ import logging
 import copy
 import sys
 
-from modules import shared
-from reactor_utils import addLoggingLevel
+from reactor.modules import shared
+from reactor.reactor_utils import addLoggingLevel
 
 
 class ColoredFormatter(logging.Formatter):

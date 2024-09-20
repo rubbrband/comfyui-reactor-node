@@ -5,9 +5,9 @@ from collections import OrderedDict
 from copy import deepcopy
 from torch.nn.parallel import DataParallel, DistributedDataParallel
 
-from r_basicsr.models import lr_scheduler as lr_scheduler
-from r_basicsr.utils import get_root_logger
-from r_basicsr.utils.dist_util import master_only
+from reactor.r_basicsr.models import lr_scheduler as lr_scheduler
+from reactor.r_basicsr.utils import get_root_logger
+from reactor.r_basicsr.utils.dist_util import master_only
 
 
 class BaseModel():

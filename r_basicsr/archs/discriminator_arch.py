@@ -2,7 +2,7 @@ from torch import nn as nn
 from torch.nn import functional as F
 from torch.nn.utils import spectral_norm
 
-from r_basicsr.utils.registry import ARCH_REGISTRY
+from reactor.r_basicsr.utils.registry import ARCH_REGISTRY
 
 
 @ARCH_REGISTRY.register()

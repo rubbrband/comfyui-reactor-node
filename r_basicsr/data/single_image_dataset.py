@@ -2,9 +2,9 @@ from os import path as osp
 from torch.utils import data as data
 from torchvision.transforms.functional import normalize
 
-from r_basicsr.data.data_util import paths_from_lmdb
-from r_basicsr.utils import FileClient, imfrombytes, img2tensor, rgb2ycbcr, scandir
-from r_basicsr.utils.registry import DATASET_REGISTRY
+from reactor.r_basicsr.data.data_util import paths_from_lmdb
+from reactor.r_basicsr.utils import FileClient, imfrombytes, img2tensor, rgb2ycbcr, scandir
+from reactor.r_basicsr.utils.registry import DATASET_REGISTRY
 
 
 @DATASET_REGISTRY.register()

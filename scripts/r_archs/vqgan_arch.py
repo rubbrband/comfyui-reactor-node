@@ -8,8 +8,8 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import copy
-from r_basicsr.utils import get_root_logger
-from r_basicsr.utils.registry import ARCH_REGISTRY
+from reactor.r_basicsr.utils import get_root_logger
+from reactor.r_basicsr.utils.registry import ARCH_REGISTRY
 
 
 def normalize(in_channels):

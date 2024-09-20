@@ -4,7 +4,7 @@ from torch import autograd as autograd
 from torch import nn as nn
 from torch.nn import functional as F
 
-from r_basicsr.utils.registry import LOSS_REGISTRY
+from reactor.r_basicsr.utils.registry import LOSS_REGISTRY
 
 
 @LOSS_REGISTRY.register()

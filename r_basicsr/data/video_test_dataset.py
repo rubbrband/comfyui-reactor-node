@@ -3,9 +3,9 @@ import torch
 from os import path as osp
 from torch.utils import data as data
 
-from r_basicsr.data.data_util import duf_downsample, generate_frame_indices, read_img_seq
-from r_basicsr.utils import get_root_logger, scandir
-from r_basicsr.utils.registry import DATASET_REGISTRY
+from reactor.r_basicsr.data.data_util import duf_downsample, generate_frame_indices, read_img_seq
+from reactor.r_basicsr.utils import get_root_logger, scandir
+from reactor.r_basicsr.utils.registry import DATASET_REGISTRY
 
 
 @DATASET_REGISTRY.register()

@@ -494,7 +494,7 @@ class DiffJPEG(nn.Module):
 if __name__ == '__main__':
     import cv2
 
-    from r_basicsr.utils import img2tensor, tensor2img
+    from reactor.r_basicsr.utils import img2tensor, tensor2img
 
     img_gt = cv2.imread('test.png') / 255.
 

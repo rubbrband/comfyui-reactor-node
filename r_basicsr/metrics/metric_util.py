@@ -1,6 +1,6 @@
 import numpy as np
 
-from r_basicsr.utils import bgr2ycbcr
+from reactor.r_basicsr.utils import bgr2ycbcr
 
 
 def reorder_image(img, input_order='HWC'):

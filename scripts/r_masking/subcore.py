@@ -2,8 +2,8 @@ import numpy as np
 import cv2
 from PIL import Image
 
-import scripts.r_masking.core as core
-from reactor_utils import tensor_to_pil
+import reactor.scripts.r_masking.core as core
+from reactor.reactor_utils import tensor_to_pil
 
 try:
     from ultralytics import YOLO

@@ -4,11 +4,11 @@ import torch.nn.functional as F
 import torchvision
 import warnings
 
-from r_basicsr.archs.arch_util import flow_warp
-from r_basicsr.archs.basicvsr_arch import ConvResidualBlocks
-from r_basicsr.archs.spynet_arch import SpyNet
-from r_basicsr.ops.dcn import ModulatedDeformConvPack
-from r_basicsr.utils.registry import ARCH_REGISTRY
+from reactor.r_basicsr.archs.arch_util import flow_warp
+from reactor.r_basicsr.archs.basicvsr_arch import ConvResidualBlocks
+from reactor.r_basicsr.archs.spynet_arch import SpyNet
+from reactor.r_basicsr.ops.dcn import ModulatedDeformConvPack
+from reactor.r_basicsr.utils.registry import ARCH_REGISTRY
 
 
 @ARCH_REGISTRY.register()

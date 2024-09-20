@@ -7,7 +7,7 @@ import torch
 import torch.nn as nn
 import torch.utils.checkpoint as checkpoint
 
-from r_basicsr.utils.registry import ARCH_REGISTRY
+from reactor.r_basicsr.utils.registry import ARCH_REGISTRY
 from .arch_util import to_2tuple, trunc_normal_
 
 

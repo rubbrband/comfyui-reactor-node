@@ -1,4 +1,4 @@
-from r_basicsr.utils.registry import MODEL_REGISTRY
+from reactor.r_basicsr.utils.registry import MODEL_REGISTRY
 from .srgan_model import SRGANModel
 from .video_base_model import VideoBaseModel
 

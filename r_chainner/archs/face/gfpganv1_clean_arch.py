@@ -7,7 +7,7 @@ import torch
 from torch import nn
 from torch.nn import functional as F
 
-from r_chainner.archs.face.stylegan2_clean_arch import StyleGAN2GeneratorClean
+from reactor.r_chainner.archs.face.stylegan2_clean_arch import StyleGAN2GeneratorClean
 
 
 class StyleGAN2GeneratorCSFT(StyleGAN2GeneratorClean):

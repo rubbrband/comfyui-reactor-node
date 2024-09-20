@@ -4,10 +4,10 @@ from os import path as osp
 from torch import distributed as dist
 from tqdm import tqdm
 
-from r_basicsr.metrics import calculate_metric
-from r_basicsr.utils import get_root_logger, imwrite, tensor2img
-from r_basicsr.utils.dist_util import get_dist_info
-from r_basicsr.utils.registry import MODEL_REGISTRY
+from reactor.r_basicsr.metrics import calculate_metric
+from reactor.r_basicsr.utils import get_root_logger, imwrite, tensor2img
+from reactor.r_basicsr.utils.dist_util import get_dist_info
+from reactor.r_basicsr.utils.registry import MODEL_REGISTRY
 from .video_base_model import VideoBaseModel
 
 

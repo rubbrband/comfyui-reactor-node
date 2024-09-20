@@ -2,6 +2,7 @@ import sys
 import cv2
 import numpy as np
 import torch
+import os
 from torchvision.transforms.functional import normalize
 
 try:
@@ -9,14 +10,12 @@ try:
 except:
     cuda = None
 
-import comfy.utils
-import folder_paths
-import comfy.model_management as model_management
+import reactor.comfy_utils
 
-from scripts.reactor_logger import logger
-from r_basicsr.utils.registry import ARCH_REGISTRY
-from r_chainner import model_loading
-from reactor_utils import (
+from reactor.scripts.reactor_logger import logger
+from reactor.r_basicsr.utils.registry import ARCH_REGISTRY
+from reactor.r_chainner import model_loading
+from reactor.reactor_utils import (
     tensor2img,
     img2tensor,
     set_ort_session,
@@ -65,8 +64,11 @@ def get_restored_face(cropped_face,
     # and detail preservation. Nearest is predictably unusable, Linear produces too much aliasing, and Lanczos produces
     # too many hallucinations and artifacts/fringing.
 
-    model_path = folder_paths.get_full_path("facerestore_models", face_restore_model)
-    device = model_management.get_torch_device()
+    model_path = os.path.join(os.environ.get("REACTOR_FACERESTORE_MODELS_PATH"), face_restore_model)
+    if torch.cuda.is_available():
+        device = torch.device("cuda")
+    else:
+        device = "cpu" 
 
     cropped_face_t = img2tensor(cropped_face / 255., bgr2rgb=True, float32=True)
     normalize(cropped_face_t, (0.5, 0.5, 0.5), (0.5, 0.5, 0.5), inplace=True)
@@ -107,7 +109,7 @@ def get_restored_face(cropped_face,
                     codeformer_net.load_state_dict(checkpoint)
                     facerestore_model = codeformer_net.eval()
                 else:
-                    sd = comfy.utils.load_torch_file(model_path, safe_load=True)
+                    sd = comfy_utils.load_torch_file(model_path, safe_load=True)
                     facerestore_model = model_loading.load_state_dict(sd).eval()
                     facerestore_model.to(device)
 

@@ -3,9 +3,9 @@ import torch
 from pathlib import Path
 from torch.utils import data as data
 
-from r_basicsr.data.transforms import augment, paired_random_crop
-from r_basicsr.utils import FileClient, get_root_logger, imfrombytes, img2tensor
-from r_basicsr.utils.registry import DATASET_REGISTRY
+from reactor.r_basicsr.data.transforms import augment, paired_random_crop
+from reactor.r_basicsr.utils import FileClient, get_root_logger, imfrombytes, img2tensor
+from reactor.r_basicsr.utils.registry import DATASET_REGISTRY
 
 
 @DATASET_REGISTRY.register()

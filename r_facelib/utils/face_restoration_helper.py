@@ -4,9 +4,9 @@ import os
 import torch
 from torchvision.transforms.functional import normalize
 
-from r_facelib.detection import init_detection_model
-from r_facelib.parsing import init_parsing_model
-from r_facelib.utils.misc import img2tensor, imwrite
+from reactor.r_facelib.detection import init_detection_model
+from reactor.r_facelib.parsing import init_parsing_model
+from reactor.r_facelib.utils.misc import img2tensor, imwrite
 
 
 def get_largest_face(det_faces, h, w):
